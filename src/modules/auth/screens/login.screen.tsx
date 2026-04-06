@@ -1,10 +1,14 @@
 import { Link } from "react-router-dom";
 import { pathsNavigation } from "../../../resources/routes/paths-navigation.routes";
+import { AUTH_PATHS } from "../../../resources/endpoints/api_endpoints.constants";
 
 function LoginScreen() {
+  console.log(AUTH_PATHS.LOGIN);
   return (
     <fieldset className="fieldset">
       <label className="label">Email</label>
+      {AUTH_PATHS.LOGIN}
+
       <input type="email" className="input" placeholder="Email" />
       <label className="label">Password</label>
       <input type="password" className="input" placeholder="Password" />
