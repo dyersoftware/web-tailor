@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { pathsNavigation } from "../../../resources/routes/paths-navigation.routes";
 
 function CardComponent() {
   return (
@@ -10,9 +11,12 @@ function CardComponent() {
           title and actions parts
         </p>
         <div className="justify-end card-actions">
-          <button className="btn btn-primary text-white">
-            <Link to="/tms">Visit</Link>
-          </button>
+          <Link
+            className="btn btn-primary text-white"
+            to={pathsNavigation.tms.tailorManagementSystem}
+          >
+            Visit
+          </Link>
         </div>
       </div>
     </div>

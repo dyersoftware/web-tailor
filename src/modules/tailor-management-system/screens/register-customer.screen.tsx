@@ -23,14 +23,21 @@ export default function RegisterCustomerScreen() {
   const onSubmit = (data: RegisterCustomerFormData) => console.log(data);
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <input {...register("firstName")} />
-      <p>{errors.firstName?.message}</p>
+    <div className="card">
+      <div className="card-body">
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <fieldset className="fieldset">
+            <input className="input" {...register("firstName")} />
+            <p>{errors.firstName?.message}</p>
 
-      <input {...register("age")} />
-      <p>{errors.age?.message}</p>
-
-      <input type="submit" />
-    </form>
+            <input className="input" {...register("age")} />
+          </fieldset>
+          <p>{errors.age?.message}</p>
+          <button type="submit" className="btn btn-neutral mt-4 ">
+            Register
+          </button>
+        </form>
+      </div>
+    </div>
   );
 }

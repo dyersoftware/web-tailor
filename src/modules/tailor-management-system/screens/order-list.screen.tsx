@@ -4,6 +4,7 @@ import {
   flexRender,
 } from "@tanstack/react-table";
 import { Link } from "react-router-dom";
+import { pathsNavigation } from "../../../resources/routes/paths-navigation.routes";
 
 const data = [{ id: 1, name: "Ada", mobile: "7690903270" }];
 const columns = [
@@ -22,9 +23,12 @@ function OrderListScreen() {
     <>
       <div className="bg-base-100  shadow-sm p-2 rounded-lg flex items-center justify-end">
         <div className="">
-          <button className="btn btn-primary">
-            <Link to="/tms/register-customer">Register Customer</Link>
-          </button>
+          <Link
+            className="btn btn-primary text-white"
+            to={pathsNavigation.tms.registerCustomer}
+          >
+            Register Customer
+          </Link>
         </div>
       </div>
 

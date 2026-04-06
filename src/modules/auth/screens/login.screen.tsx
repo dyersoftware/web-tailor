@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
+import { pathsNavigation } from "../../../resources/routes/paths-navigation.routes";
 
-function LoginSceen() {
+function LoginScreen() {
   return (
     <fieldset className="fieldset">
       <label className="label">Email</label>
@@ -10,11 +11,11 @@ function LoginSceen() {
       <div>
         <a className="link link-hover">Forgot password?</a>
       </div>
-      <button className="btn btn-neutral mt-4">
-        <Link to="/dashboard">Login</Link>
-      </button>
+      <Link className="btn btn-neutral mt-4" to={pathsNavigation.dashboard}>
+        Login
+      </Link>
     </fieldset>
   );
 }
 
-export default LoginSceen;
+export default LoginScreen;
