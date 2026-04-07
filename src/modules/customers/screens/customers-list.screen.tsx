@@ -12,7 +12,7 @@ const columns = [
   { accessorKey: "mobile", header: "Mobile" },
 ];
 
-function OrderListScreen() {
+function CustomersListScreen() {
   // eslint-disable-next-line react-hooks/incompatible-library
   const table = useReactTable({
     data,
@@ -25,7 +25,7 @@ function OrderListScreen() {
         <div className="">
           <Link
             className="btn btn-primary text-white"
-            to={pathsNavigation.tms.registerCustomer}
+            to={pathsNavigation.customers_paths.registerCustomer}
           >
             Register Customer
           </Link>
@@ -70,4 +70,4 @@ function OrderListScreen() {
   );
 }
 
-export default OrderListScreen;
+export default CustomersListScreen;

@@ -5,8 +5,8 @@ export const pathsNavigation = {
     register: "/auth/register",
   },
 
-  tms: {
-    tailorManagementSystem: "/tms",
-    registerCustomer: "/tms/register-customer",
+  customers_paths: {
+    customers: "/customers",
+    registerCustomer: "/customers/register-customer",
   },
 };

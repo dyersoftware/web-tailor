@@ -13,7 +13,7 @@ function CardComponent() {
         <div className="justify-end card-actions">
           <Link
             className="btn btn-primary text-white"
-            to={pathsNavigation.tms.tailorManagementSystem}
+            to={pathsNavigation.customers_paths.customers}
           >
             Visit
           </Link>

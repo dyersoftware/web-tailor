@@ -4,7 +4,7 @@ import DashboardLayout from "../layouts/dashboard.layout";
 import ProtectedLayout from "../layouts/protected.layout";
 import authRoutes from "../../modules/auth/routes/auth.routes";
 import dashboardRoutes from "../../modules/dashboard/routes/dashboard.routes";
-import tmsRoutes from "../../modules/tailor-management-system/routes/tms.routes";
+import customersRoutes from "../../modules/customers/routes/customers.routes";
 
 function MainRoutes() {
   return (
@@ -23,8 +23,8 @@ function MainRoutes() {
             <Route key={i} {...route} />
           ))}
         </Route>
-        <Route path="tms" element={<DashboardLayout />}>
-          {tmsRoutes.map((route, i) => (
+        <Route path="customers" element={<DashboardLayout />}>
+          {customersRoutes.map((route, i) => (
             <Route key={i} {...route} />
           ))}
         </Route>
