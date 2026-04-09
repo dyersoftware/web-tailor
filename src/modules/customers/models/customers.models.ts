@@ -26,7 +26,8 @@ export interface IResRegisteredCustomerResponse extends ApiErrorResponse {
 
 export interface ReqRegisterCustomerFormData {
   name: string;
-  email: string;
+  email?: string;
   phone: string;
-  address: string;
+  address?: string;
+  others?: string;
 }

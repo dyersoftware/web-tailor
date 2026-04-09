@@ -5,14 +5,15 @@ import { useState } from "react";
 import { registerCustomers } from "../services/customers.services";
 import type { ReqRegisterCustomerFormData } from "../models/customers.models";
 
-const schema = yup.object({
+const schema: yup.ObjectSchema<ReqRegisterCustomerFormData> = yup.object({
   name: yup.string().required("Name is required"),
-  email: yup.string().email("Invalid email").required("Email is required"),
+  email: yup.string().email("Invalid email")?.optional(),
   phone: yup
     .string()
     .matches(/^[0-9]{10}$/, "Phone must be 10 digits")
     .required("Phone is required"),
-  address: yup.string().required("Address is required"),
+  address: yup.string()?.optional(),
+  others: yup.string()?.optional(),
 });
 
 export default function RegisterCustomerScreen() {
@@ -69,6 +70,16 @@ export default function RegisterCustomerScreen() {
         {" "}
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="space-y-3">
+            {/* Phone */}
+            <div>
+              <input
+                type="tel"
+                placeholder="Phone"
+                className="input input-bordered w-full"
+                {...register("phone")}
+              />
+              <p className="text-red-500 text-sm">{errors.phone?.message}</p>
+            </div>
             {/* Name */}
             <div>
               <input
@@ -91,17 +102,6 @@ export default function RegisterCustomerScreen() {
               <p className="text-red-500 text-sm">{errors.email?.message}</p>
             </div>
 
-            {/* Phone */}
-            <div>
-              <input
-                type="text"
-                placeholder="Phone"
-                className="input input-bordered w-full"
-                {...register("phone")}
-              />
-              <p className="text-red-500 text-sm">{errors.phone?.message}</p>
-            </div>
-
             {/* Address */}
             <div>
               <input
@@ -111,6 +111,15 @@ export default function RegisterCustomerScreen() {
                 {...register("address")}
               />
               <p className="text-red-500 text-sm">{errors.address?.message}</p>
+            </div>
+            <div>
+              <textarea
+                placeholder="Others"
+                className="textarea textarea-bordered w-full"
+                {...register("others")}
+                cols={8}
+              />
+              <p className="text-red-500 text-sm">{errors.others?.message}</p>
             </div>
           </div>
 
