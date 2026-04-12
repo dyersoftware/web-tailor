@@ -1,4 +1,3 @@
-import React from "react";
 import PaymentListComponent from "../components/payments-list.component";
 
 function PaymentListScreen() {
