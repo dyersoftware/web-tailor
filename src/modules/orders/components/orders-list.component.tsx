@@ -105,7 +105,7 @@ function OrdersListComponents() {
     <div className="mt-10 px-4">
       {/* ================= DESKTOP TABLE ================= */}
       <div className="hidden md:block">
-        <div className="overflow-x-auto rounded-lg border">
+        <div className="overflow-x-auto rounded-lg border border-base-200">
           <table className="table table-zebra">
             <thead>
               {table.getHeaderGroups().map((hg) => (

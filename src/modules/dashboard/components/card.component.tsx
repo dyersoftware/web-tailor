@@ -3,7 +3,7 @@ import { navigate_paths } from "../../../resources/routes/paths-navigation.route
 
 function CardComponent() {
   return (
-    <div className="card w-96 bg-base-100 card-xs shadow-sm">
+    <div className="card max-w-96 bg-base-100 card-xs shadow-sm">
       <div className="card-body">
         <h2 className="card-title">Tailor</h2>
         <p>
