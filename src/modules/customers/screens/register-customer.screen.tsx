@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useState } from "react";
-import { registerCustomers } from "../services/customers.services";
+import { registerCustomer } from "../services/customers.services";
 import type { ReqRegisterCustomerFormData } from "../models/customers.models";
 
 const schema: yup.ObjectSchema<ReqRegisterCustomerFormData> = yup.object({
@@ -36,7 +36,7 @@ export default function RegisterCustomerScreen() {
       setLoading(true);
       setApiError(null);
 
-      await registerCustomers(data);
+      await registerCustomer(data);
 
       // success
       reset();
@@ -64,17 +64,15 @@ export default function RegisterCustomerScreen() {
   return (
     <div className="mt-10">
       <h2 className="text-xl font-bold mb-4">Register Customer</h2>
-
       {apiError && <div className="alert alert-error mb-3">{apiError}</div>}
-      <div className="w-full w-xs">
-        {" "}
+      <div className="w-full">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="space-y-3">
             {/* Phone */}
             <div>
               <input
                 type="tel"
-                placeholder="Phone"
+                placeholder="Phone*"
                 className="input input-bordered w-full"
                 {...register("phone")}
               />
@@ -84,7 +82,7 @@ export default function RegisterCustomerScreen() {
             <div>
               <input
                 type="text"
-                placeholder="Name"
+                placeholder="Name*"
                 className="input input-bordered w-full"
                 {...register("name")}
               />

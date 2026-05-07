@@ -47,3 +47,7 @@ export interface ICustomerDetails {
   updated_at: string;
   admin_user_id: string;
 }
+
+export interface IResAssignedCustomer extends ApiErrorResponse {
+  data?: object;
+}

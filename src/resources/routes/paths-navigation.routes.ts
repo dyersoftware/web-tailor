@@ -9,6 +9,7 @@ export const navigate_paths = {
     customers: "/customers",
     registerCustomer: "/customers/register-customer",
     customerDetails: "/customers/details-customer",
+    assignCustomer: "/customers/find-and-assign-customer",
   },
   orders_paths: {
     orders: "/orders",

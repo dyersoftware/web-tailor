@@ -9,41 +9,9 @@ function CustomersListScreen() {
         <div className="">
           <Link
             className="btn btn-primary text-white"
-            to={navigate_paths.customers_paths.registerCustomer}
+            to={navigate_paths.customers_paths.assignCustomer}
           >
-            Register Customer
-          </Link>
-          <Link
-            className="btn btn-primary text-white"
-            to={navigate_paths.orders_paths.orders}
-          >
-            order list
-          </Link>
-
-          <Link
-            className="btn btn-primary text-white"
-            to={navigate_paths.orders_paths.orderDetails}
-          >
-            order details
-          </Link>
-
-          <Link
-            className="btn btn-primary text-white"
-            to={navigate_paths.payments_paths.payments}
-          >
-            payment List
-          </Link>
-          <Link
-            className="btn btn-primary text-white"
-            to={navigate_paths.payments_paths.paymentDetails}
-          >
-            payment details
-          </Link>
-          <Link
-            className="btn btn-primary text-white"
-            to={navigate_paths.payments_paths.createPayment}
-          >
-            payment create
+            Assign Customer
           </Link>
         </div>
       </div>

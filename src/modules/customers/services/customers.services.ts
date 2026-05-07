@@ -3,6 +3,7 @@ import { CUSTOMER_PATHS } from "../../../resources/endpoints/api_endpoints.const
 import type {
   ICustomer,
   ICustomersResponse,
+  IResAssignedCustomer,
   IResCustomerDetails,
   IResRegisteredCustomerResponse,
   ReqRegisterCustomerFormData,
@@ -15,7 +16,7 @@ export const getAssignedCustomers = async (): Promise<ICustomer[]> => {
   return response.data || [];
 };
 
-export const registerCustomers = async (
+export const registerCustomer = async (
   customerData: ReqRegisterCustomerFormData,
 ): Promise<IResRegisteredCustomerResponse> => {
   const response = await httpClient.post<IResRegisteredCustomerResponse>(
@@ -30,6 +31,25 @@ export const getCustomerById = async (
 ): Promise<IResCustomerDetails> => {
   const response = await httpClient.get<IResCustomerDetails>(
     `${CUSTOMER_PATHS.CUSTOMER_BY_ID}/${customerId}`,
+  );
+  return response || [];
+};
+
+export const getCustomerByMobileNumber = async (
+  mobileNumber: string,
+): Promise<IResCustomerDetails> => {
+  const response = await httpClient.get<IResCustomerDetails>(
+    `${CUSTOMER_PATHS.CUSTOMER_BY_MOBILE_NUMBER}/${mobileNumber}`,
+  );
+  return response || [];
+};
+
+export const assignCustomer = async (
+  customer_id: number,
+): Promise<IResAssignedCustomer> => {
+  const response = await httpClient.post<IResAssignedCustomer>(
+    `${CUSTOMER_PATHS.ASSIGN_CUSTOMER}`,
+    { customer_id },
   );
   return response || [];
 };

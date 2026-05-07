@@ -9,6 +9,8 @@ export const CUSTOMER_PATHS = {
   ASSIGNED_CUSTOMERS: `${apiUrl}/customers/assigned-customers`,
   REGISTER_CUSTOMER: `${apiUrl}/customers`,
   CUSTOMER_BY_ID: `${apiUrl}/customers`,
+  CUSTOMER_BY_MOBILE_NUMBER: `${apiUrl}/customers/mobile`,
+  ASSIGN_CUSTOMER: `${apiUrl}/customers/assign`,
 };
 
 export const ORDER_PATHS = {
